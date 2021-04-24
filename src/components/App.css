@@ -1,3 +1,8 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
 .ticker-wrap {
   width: 200%;
   padding-left: 100%;
