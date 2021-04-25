@@ -6,20 +6,20 @@ import { Icon } from 'semantic-ui-react';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#F9A55B',
+    backgroundColor: '#000000',
     color: '#ffffff',
-    maxHeight: '2em',
+    maxHeight: '1.5em',
   },
   title: {
     margin: 'auto',
     padding: '.25em',
     fontWeight: 'bold',
-    fontSize: '10px',
+    fontSize: '8px',
   },
-  iconStyle: {
-    margin: 'auto',
-    paddingBottom: '20px'
-  }
+  // iconStyle: {
+  //   margin: 'auto',
+  //   paddingBottom: '20px'
+  // }
 }));
 
 export default function Promo() {
