@@ -1,20 +1,29 @@
 import React from 'react';
-import Oranges from '../../img/oranges-background-final.svg';
-import Oranges2 from '../../img/oranges-background-final-inverse.svg';
+import DarkBackground from '../../img/darkbackground.png';
 import Logo from './Logo';
 import ImageCarousel from './ImageCarousel';
+import BoochControl from './BoochControl';
 
 const pageStyles = {
   backgroundColor: '#F8D294',
   margin: 'auto',
+  filter: 'drop-shadow(0 7px 3px rgba(0, 0, 0, .4))',
+}
+
+const test = {
+  backgroundColor: '#ffffff',
+  height: '500px',
 }
 
 export default function Main() {
   return (
     <>
-      <div style={pageStyles, {backgroundColor: '#F8D294', backgroundImage: `url(${Oranges}), url(${Oranges2})`, backgroundRepeat: 'no-repeat, no-repeat', backgroundPosition: 'left top, right top'}}>
+      <div style={pageStyles, {backgroundColor: '#000000', backgroundImage: `url(${DarkBackground})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
         <Logo />
         <ImageCarousel />
+        <div style={test}>
+          <BoochControl />
+        </div>
       </div>
     </>
   );
