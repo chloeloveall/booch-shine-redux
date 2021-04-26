@@ -13,12 +13,12 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     position: 'static',
-    filter: 'drop-shadow(0 4px 2px rgba(0, 0, 0, .3))',
+    filter: 'drop-shadow(0 7px 3px rgba(0, 0, 0, .4))',
   },
   customizeToolbar: {
-    backgroundColor: '#F8D294',
+    backgroundColor: '#234A50',
     color: '#ffffff',
-    borderBottom: '2px #F9A55B solid',
+    borderBottom: '2px #ffffff solid',
   },
   menuButton: {
     marginRight: theme.spacing(1),
