@@ -24,6 +24,13 @@ body {
   animation: ticker 40s linear infinite;
 }
 
+.ticker-move-lower {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100%;
+  animation: ticker 40s reverse linear infinite;
+}
+
 .ticker-move:hover {
   animation-play-state: paused;
 }
