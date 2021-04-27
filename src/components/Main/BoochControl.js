@@ -39,11 +39,13 @@ export default class BoochControl extends React.Component {
 
   handleChangingSelectedBooch = (id) => {
     const selectedBooch = this.state.mainBoochList.filter(booch => booch.id === id)[0];
-    this.setState({selectedBooch: selectedBooch});
+    this.setState({
+      selectedBooch: selectedBooch
+    });
   }
 
   handleDeletingBooch = (id) => {
-    const newMainBoochList = this.state.mainBoochList.filter(booch =>booch.id !== id);
+    const newMainBoochList = this.state.mainBoochList.filter(booch => booch.id !== id);
     this.setState({
       mainBoochList: newMainBoochList,
       selectedBooch: null
@@ -52,7 +54,9 @@ export default class BoochControl extends React.Component {
 
   handleEditClick = () => {
     console.log("handleEditClick reached!");
-    this.setState({editing: true});
+    this.setState({
+      editing: true
+    });
   }
 
   handleEditingBoochInList = (boochToEdit) => {
@@ -62,14 +66,32 @@ export default class BoochControl extends React.Component {
   this.setState({
       mainBoochList: editedMainBoochList,
       editing: false,
-      selectedBooch: null
+      selectedBooch: boochToEdit
     });
   }
 
   handleBuyingBooch = () => {
     const selectedBooch = this.state.selectedBooch;
-    const decrementedBooch = Object.assign({}, selectedBooch, {remainingPints: selectedBooch.remainingPints - 1});
-    if(selectedBooch.remainingPints > 0) {
+    if(selectedBooch.remainingPints > 10) {
+      const decrementedBooch = Object.assign({}, selectedBooch, {remainingPints: selectedBooch.remainingPints - 1});
+      const newMainBoochList = this.state.mainBoochList
+        .filter(booch => booch.id !== this.state.selectedBooch.id)
+        .concat(decrementedBooch);
+      this.setState({
+        mainBoochList: newMainBoochList,
+        selectedBooch: decrementedBooch
+      });
+    } else if (selectedBooch.remainingPints > 0 && selectedBooch.remainingPints <= 10) {
+      const decrementedBooch = Object.assign({}, selectedBooch, {remainingPints: selectedBooch.remainingPints - 1}, {remainingPintsMessage: selectedBooch.remainingPintsMessage = 'Almost Empty!'});
+      const newMainBoochList = this.state.mainBoochList
+        .filter(booch => booch.id !== this.state.selectedBooch.id)
+        .concat(decrementedBooch);
+      this.setState({
+        mainBoochList: newMainBoochList,
+        selectedBooch: decrementedBooch
+      });
+    } else {
+      const decrementedBooch = Object.assign({}, selectedBooch, {remainingPintsMessage: selectedBooch.remainingPintsMessage = 'Out of Stock!'});
       const newMainBoochList = this.state.mainBoochList
         .filter(booch => booch.id !== this.state.selectedBooch.id)
         .concat(decrementedBooch);
