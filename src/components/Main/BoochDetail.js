@@ -6,15 +6,16 @@ export default function BoochDetail(props) {
   return (
     <>
       <h1>Hard Booch Detail</h1>
-      <h3>{props.name}</h3>
-      <p>{props.brand}</p>
-      <p>{props.price}</p>
-      <p>{props.alcoholContent}</p>
-      <p>{props.flavorDescription}</p>
-      <p>{props.remainingPints}</p>
+      <h3>{booch.name}</h3>
+      <p>{booch.brand}</p>
+      <p>{booch.price}</p>
+      <p>{booch.alcoholContent}</p>
+      <p>{booch.flavorDescription}</p>
+      <p>{booch.remainingPints}</p>
+      <p>{booch.remainingPintsMessage}</p>
       <button onClick={ props.onClickingEdit }>Update Booch</button>
       <button onClick={() => onClickingDelete(booch.id)}>Delete Booch</button>
-      <button onClick={() => onClickingBuy(booch.id)}>Buy Pint</button>
+      <button onClick={ props.onClickingBuy }>Buy Pint</button>
       <hr/>
     </>
   );
