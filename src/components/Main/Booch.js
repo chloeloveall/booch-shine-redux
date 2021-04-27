@@ -11,6 +11,7 @@ export default function Booch(props) {
         <p>{props.alcoholContent}</p>
         <p>{props.flavorDescription}</p>
         <p>{props.remainingPints}</p>
+        <p>{props.remainingPintsMessage}</p>
         <hr/>
       </div>
     </>
@@ -24,6 +25,7 @@ Booch.propTypes = {
   alcoholContent: PropTypes.string,
   flavorDescription: PropTypes.string.isRequired,
   remainingPints: PropTypes.number,
+  remainingPintsMessage: PropTypes.string,
   id: PropTypes.string,
   whenBoochClicked: PropTypes.func
 };
