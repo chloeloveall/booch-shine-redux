@@ -97,7 +97,7 @@ export default function SearchAppBar() {
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             <IconButton>
-              <img className={classes.logoStyle} src={JuneshineLogo} />
+              <img className={classes.logoStyle} src={JuneshineLogo} alt='JuneShine logo' />
             </IconButton>
           </Typography>
           <div className={classes.search}>

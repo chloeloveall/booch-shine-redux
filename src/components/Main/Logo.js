@@ -22,7 +22,7 @@ export default function Logo() {
   return (
     <>
       <div className={classes.heroContent}>
-        <img className={classes.pageStyles} src={JuneshineLogo} />
+        <img className={classes.pageStyles} src={JuneshineLogo} alt='JuneShine logo' />
       </div>
     </>
   );

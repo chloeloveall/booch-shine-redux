@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import { Icon } from 'semantic-ui-react';
+// import { Icon } from 'semantic-ui-react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,7 +24,7 @@ export default function Promo() {
   return (
     <>
       <AppBar elevation={0} position="static" className={classes.root}>
-        <div className="ticker-wrap">
+        {/* <div className="ticker-wrap">
           <div className="ticker-move-lower">
             <div className={classes.title} className="ticker-item">NEW SUMMER FLAVORS AVAILABLE NOW!</div>
             <div className={classes.title} className="ticker-item">
@@ -56,7 +56,7 @@ export default function Promo() {
             </div>
             <div className={classes.title} className="ticker-item">SMOOTH, BUT NOT TOO SWEET</div>
           </div>
-        </div>
+        </div> */}
       </AppBar>
     </>
   );
