@@ -66,6 +66,20 @@ export default class BoochControl extends React.Component {
     });
   }
 
+  handleBuyingBooch = () => {
+    const selectedBooch = this.state.selectedBooch;
+    const decrementedBooch = Object.assign({}, selectedBooch, {remainingPints: selectedBooch.remainingPints - 1});
+    if(selectedBooch.remainingPints > 0) {
+      const newMainBoochList = this.state.mainBoochList
+        .filter(booch => booch.id !== this.state.selectedBooch.id)
+        .concat(decrementedBooch);
+      this.setState({
+        mainBoochList: newMainBoochList,
+        selectedBooch: decrementedBooch
+      });
+    }
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -73,7 +87,7 @@ export default class BoochControl extends React.Component {
       currentlyVisibleState = <EditBoochForm booch={this.state.selectedBooch} onEditBooch={this.handleEditingBoochInList} />
       buttonText = "Back";
     } else if (this.state.selectedBooch !== null) {
-      currentlyVisibleState = <BoochDetail booch={this.state.selectedBooch} onClickingDelete={this.handleDeletingBooch} onClickingEdit = {this.handleEditClick} />
+      currentlyVisibleState = <BoochDetail booch={this.state.selectedBooch} onClickingDelete={this.handleDeletingBooch} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyingBooch} />
       //back or submit? not sure yet
       buttonText = 'Back';
     } else if (this.state.formVisibleOnPage) {
