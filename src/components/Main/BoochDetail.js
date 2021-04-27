@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function BoochDetail(props) {
-  const { booch, onClickingDelete, onClickingBuy } = props;
+  const { booch, onClickingDelete } = props;
   return (
     <>
       <h1>Hard Booch Detail</h1>
