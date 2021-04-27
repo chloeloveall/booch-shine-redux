@@ -15,6 +15,7 @@ export default function BoochList(props) {
           alcoholContent={booch.alcoholContent}
           flavorDescription={booch.flavorDescription}
           remainingPints={booch.remainingPints}
+          remainingPintsMessage={booch.remainingPintsMessage}
           id={booch.id}
           key={booch.id}
         />
