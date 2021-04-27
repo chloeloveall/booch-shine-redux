@@ -14,7 +14,7 @@ export default function BoochDetail(props) {
       <p>{props.remainingPints}</p>
       <button onClick={ props.onClickingEdit }>Update Booch</button>
       <button onClick={() => onClickingDelete(booch.id)}>Delete Booch</button>
-      <button onClick={() => onClickingBuy(booch.id)}>Buy Booch</button>
+      <button onClick={() => onClickingBuy(booch.id)}>Buy Pint</button>
       <hr/>
     </>
   );
