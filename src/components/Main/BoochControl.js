@@ -2,6 +2,7 @@ import React from 'react';
 import NewBoochForm from './NewBoochForm';
 import BoochList from './BoochList';
 import BoochDetail from  './BoochDetail';
+import EditBoochForm from './EditBoochForm';
 
 export default class BoochControl extends React.Component {
   constructor(props) {
@@ -9,7 +10,8 @@ export default class BoochControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       selectedBooch: null,
-      mainBoochList: []
+      mainBoochList: [],
+      editing: false
     };
   }
 
@@ -17,7 +19,8 @@ export default class BoochControl extends React.Component {
     if (this.state.selectedBooch !== null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedBooch: null
+        selectedBooch: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
@@ -47,11 +50,30 @@ export default class BoochControl extends React.Component {
     });
   }
 
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({editing: true});
+  }
+
+  handleEditingBoochInList = (boochToEdit) => {
+  const editedMainBoochList = this.state.mainBoochList
+    .filter(booch => booch.id !== this.state.selectedBooch.id)
+    .concat(boochToEdit);
+  this.setState({
+      mainBoochList: editedMainBoochList,
+      editing: false,
+      selectedBooch: null
+    });
+  }
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.selectedBooch !== null) {
-      currentlyVisibleState = <BoochDetail booch={this.state.selectedBooch} onClickingDelete={this.handleDeletingBooch} />
+    if (this.state.editing) {      
+      currentlyVisibleState = <EditBoochForm booch={this.state.selectedBooch} onEditBooch={this.handleEditingBoochInList} />
+      buttonText = "Back";
+    } else if (this.state.selectedBooch !== null) {
+      currentlyVisibleState = <BoochDetail booch={this.state.selectedBooch} onClickingDelete={this.handleDeletingBooch} onClickingEdit = {this.handleEditClick} />
       //back or submit? not sure yet
       buttonText = 'Back';
     } else if (this.state.formVisibleOnPage) {
