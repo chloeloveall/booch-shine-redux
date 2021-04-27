@@ -10,11 +10,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#000000',
     borderTop: '2px solid #ffffff',
   },
-  // paper: {
-  //   padding: theme.spacing(2),
-  //   textAlign: 'center',
-  //   color: theme.palette.text.secondary,
-  // },
 }));
 
 export default function Footer() {
@@ -26,11 +21,9 @@ export default function Footer() {
       <div className={classes.root}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
-            {/* <Paper className={classes.paper}>contact detail</Paper> */}
           </Grid>
           <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
             <Contact />
-            {/* <Paper className={classes.paper}>something else</Paper> */}
           </Grid>
         </Grid>
         <PromoBottom />
