@@ -82,9 +82,6 @@ Deployed on [Vercel](https://vercel.com)
 #### Confirm you have Node.js and npm installed
 
 * Confirm you have installed [Node](https://nodejs.org/en/download/) and [Node Package Manager](https://www.npmjs.com/get-npm)
-* Recreate the project environment/install required dependencies by running the terminal command: ```$ npm install```
-* Create the production environment by running the terminal command: ```$ npm run build```
-* Open the project in the browser of your choice with the terminal command: ```$ npm run start```
 
 ### Installation
 
@@ -92,11 +89,10 @@ Deployed on [Vercel](https://vercel.com)
 
 * Clone the repository with the following git terminal command: ```$ git clone https://github.com/chloeloveall/booch-shine.git```
 * Open the project's root directory (```booch-shine```) in your terminal
-* Run the terminal command: ```npm install```
 
 #### Download
 
-* Open the repository on GitHub: [chloeloveall/boocj-shine](https://github.com/chloeloveall/booch-shine)
+* Open the repository on GitHub: [chloeloveall/booch-shine](https://github.com/chloeloveall/booch-shine)
 * Click ```Code``` button and select ```Download ZIP```
 * Open and extract the files
 * Open [VSCode], or your code editor of choice
@@ -105,9 +101,9 @@ Deployed on [Vercel](https://vercel.com)
 
 ### Launching the program
 
-* You are now ready to run the program! To launch the program, navigate to the production directory (booch-shine/ParksApi) and run the following terminal command: ```npm start```
-* In the browser of your choice, navigate to: ```http://localhost:3000/``` 
-
+* Navigate to the root directory (```booch-shine/```) and install required dependencies by running the following terminal command: ```npm install```
+* You are now ready to run the program! From the root directory, run the following terminal command: ```npm start```
+* In the browser of your choice, navigate to: [http://localhost:3000](http://localhost:3000)
 
 ## Getting Started with Create React App
 
