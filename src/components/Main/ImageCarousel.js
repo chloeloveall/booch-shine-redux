@@ -24,22 +24,6 @@ const useStyles = makeStyles(() => ({
     filter: 'drop-shadow(0 0 10px #000000)',
     paddingBottom: '5em',
   },
-  carouselMax: {
-    maxHeight: '400px',
-  },
-  // carouselCaptions: {
-  //   filter: 'drop-shadow(1px 1px 0 orange)',
-  //   backgroundColor: '#ffffff',
-  //   opacity: 0.5,
-  //   marginLeft: 'auto',
-  //   marginRight: 'auto',
-  //   width: '50%',
-  //   color: '#000000',
-  //   maxHeight: '50%',
-  // },
-  // carouselItemsStyle: {
-  //   fontSize: '11px',
-  // },
 }));
 
 export default function ImageCarousel() {
@@ -47,91 +31,41 @@ export default function ImageCarousel() {
 
   return (
     <>
-    <div className={classes.shadow}>
-      <Carousel className={classes.carouselStyle}>
-        <Carousel.Item className={classes.carouselMax}>
-          <img className='d-block w-100' src={Carousel1} alt='First slide' />
-          {/* <Carousel.Caption className={classes.carouselCaptions}>
-            <h3>First slide label</h3>
-            <p className={classes.carouselItemsStyle}>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
+      <div className={classes.shadow}>
+        <Carousel className={classes.carouselStyle}>
+          <Carousel.Item>
+            <img className='d-block w-100' src={Carousel1} alt='First slide' />
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img className='d-block w-100' src={Carousel2} alt='Second slide' />
+          <Carousel.Item>
+            <img className='d-block w-100' src={Carousel2} alt='Second slide' />
+          </Carousel.Item>
 
-          {/* <Carousel.Caption className={classes.carouselCaptions}>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className='d-block w-100' src={Carousel3} alt='Third slide' />
+          <Carousel.Item>
+            <img className='d-block w-100' src={Carousel3} alt='Third slide' />
+          </Carousel.Item>
 
-          {/* <Carousel.Caption className={classes.carouselCaptions}>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
+          <Carousel.Item>
+            <img className='d-block w-100' src={Carousel4} alt='Fifth slide' />
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img className='d-block w-100' src={Carousel4} alt='Fifth slide' />
+          <Carousel.Item>
+            <img className='d-block w-100' src={Carousel5} alt='Fifth slide' />
+          </Carousel.Item>
 
-          {/* <Carousel.Caption className={classes.carouselCaptions}>
-            <h3>Fifth slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
+          <Carousel.Item>
+            <img className='d-block w-100' src={Carousel6} alt='Fifth slide' />
+          </Carousel.Item>
 
-        <Carousel.Item>
-          <img className='d-block w-100' src={Carousel5} alt='Fifth slide' />
+          <Carousel.Item>
+            <img className='d-block w-100' src={Carousel7} alt='Seventh slide' />
+          </Carousel.Item>
 
-          {/* <Carousel.Caption className={classes.carouselCaptions}>
-            <h3>Fifth slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={Carousel6} alt='Fifth slide' />
-
-          {/* <Carousel.Caption className={classes.carouselCaptions}>
-            <h3>Fifth slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={Carousel7} alt='Seventh slide' />
-
-          {/* <Carousel.Caption className={classes.carouselCaptions}>
-            <h3>Fifth slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img className='d-block w-100' src={Carousel8} alt='Eighth slide' />
-
-          {/* <Carousel.Caption className={classes.carouselCaptions}>
-            <h3>Fifth slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption> */}
-        </Carousel.Item>
-      </Carousel>
-    </div>  
+          <Carousel.Item>
+            <img className='d-block w-100' src={Carousel8} alt='Eighth slide' />
+          </Carousel.Item>
+        </Carousel>
+      </div>  
     </>
   );
 }
