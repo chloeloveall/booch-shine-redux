@@ -3,6 +3,7 @@ import Header from './Header/Header';
 import Main from './Main/Main';
 import Footer from './Footer/Footer';
 import Container from '@material-ui/core/Container';
+import BoochControl from './BoochControl/BoochControl';
 
 const pageStyles = {
   margin: 'auto',
@@ -26,6 +27,7 @@ export default function App() {
         <Header />
         </div>
         <Main />
+        <BoochControl />
         <Footer />
       </Container>
     </>
