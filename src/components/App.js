@@ -19,7 +19,8 @@ const stickyHeader = {
   zIndex: 1,
 }
 
-export default function App() {
+const App = () => {
+// export default function App() {
   return (
     <>
       <Container maxWidth='xl' style={pageStyles}>
@@ -33,3 +34,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;
