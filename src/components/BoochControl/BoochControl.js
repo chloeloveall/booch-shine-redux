@@ -3,6 +3,17 @@ import NewBoochForm from './NewBoochForm';
 import BoochList from './BoochList';
 import BoochDetail from  './BoochDetail';
 import EditBoochForm from './EditBoochForm';
+import BoochInfo from './BoochInfo';
+import Grid from '@material-ui/core/Grid';
+
+const boochInfoStyle = {
+  color: 'blue',
+  width: '100%',
+}
+
+const boochInfoFormStyles = {
+  padding: '4%',
+}
 
 export default class BoochControl extends React.Component {
   constructor(props) {
@@ -105,6 +116,8 @@ export default class BoochControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
+    let buttonStyle = null;
+    let formStyles = null;
     if (this.state.editing) {      
       currentlyVisibleState = <EditBoochForm booch={this.state.selectedBooch} onEditBooch={this.handleEditingBoochInList} />
       buttonText = "Back";
@@ -115,14 +128,31 @@ export default class BoochControl extends React.Component {
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewBoochForm onNewBoochCreation={this.handleAddingNewBoochToList} />
       buttonText = 'Back';
-    } else {
+    // } else {
+    //   currentlyVisibleState = <BoochList boochList={this.state.mainBoochList} onBoochSelection={this.handleChangingSelectedBooch} />
+    //   buttonText = "Add Booch";
+    // }
+    } else if (this.state.mainBoochList.length >= 1) {
       currentlyVisibleState = <BoochList boochList={this.state.mainBoochList} onBoochSelection={this.handleChangingSelectedBooch} />
-      buttonText = "Add Booch";
+      buttonText = "Add a New Booch";
+    } else {
+      currentlyVisibleState = <BoochInfo onBoochSelection={this.handleChangingSelectedBooch} />
+      buttonText = "Add a New Booch";
+      buttonStyle = boochInfoStyle;
+      formStyles = boochInfoFormStyles;
     }
     return (
       <>
-        {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <Grid 
+          container
+          direction="row"
+          justify="center"
+          alignItems="stretch"
+          style={formStyles}
+        >
+          {currentlyVisibleState}
+          <button style={buttonStyle} onClick={this.handleClick}>{buttonText}</button>
+        </Grid>
       </>
     );
   }
