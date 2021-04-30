@@ -7,7 +7,7 @@
 #### By _**Chloe Loveall**_
 <br>
 
-![license](https://img.shields.io/github/license/chloeloveall/booch-shine?color=blue&style=flat-square) &nbsp; ![top project language](https://img.shields.io/github/languages/top/chloeloveall/booch-shine?style=flat-square) &nbsp; ![last github commit](https://img.shields.io/github/last-commit/chloeloveall/booch-shine?style=flat-square) &nbsp; ![github pull requests](https://img.shields.io/github/issues-pr/chloeloveall/booch-shine?style=flat-square) &nbsp; ![open issues](https://img.shields.io/github/issues-raw/chloeloveall/booch-shine?style=flat-square) &nbsp; ![github contributors](https://img.shields.io/github/contributors/chloeloveall/booch-shine?color=brightgreen&style=flat-square)
+![license](https://img.shields.io/github/license/chloeloveall/booch-shine?color=blue&style=flat-square) &nbsp; ![top project language](https://img.shields.io/github/languages/top/chloeloveall/booch-shine?style=flat-square) &nbsp; ![last github commit](https://img.shields.io/github/last-commit/chloeloveall/booch-shine?style=flat-square) &nbsp; ![github pull requests](https://img.shields.io/github/issues-pr/chloeloveall/booch-shine?style=flat-square) &nbsp; ![open issues](https://img.shields.io/github/issues-raw/chloeloveall/booch-shine?style=flat-square) &nbsp; ![github contributors](https://img.shields.io/github/contributors/chloeloveall/booch-shine?color=brightgreen&style=flat-square) &nbsp; ![vercel deployment status](https://img.shields.io/github/deployments/chloeloveall/booch-shine/production?label=vercel&logo=vercel)
 
 ## Table of Contents
 
