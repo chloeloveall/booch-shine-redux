@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Booch(props) {
+const Booch = (props) => {
+// export default function Booch(props) {
   return (
     <>
       <div onClick = {() => props.whenBoochClicked(props.id)}>
@@ -29,3 +30,5 @@ Booch.propTypes = {
   id: PropTypes.string,
   whenBoochClicked: PropTypes.func
 };
+
+export default Booch;
