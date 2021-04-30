@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function Contact() {
+const Contact = () => {
+// export default function Contact() {
 
   const classes = useStyles();
 
@@ -24,13 +25,15 @@ export default function Contact() {
         <Card.Img style={{ minHeight: '300px'}} src='https://media.giphy.com/media/1esYrqh5zNmKbKcuY7/giphy.gif' alt="Card image" />
         <Card.ImgOverlay>
           <Card.Text className={classes.overlay}>
-          <Card.Title>Contact</Card.Title>
+          {/* <Card.Title>Contact</Card.Title> */}
             This is a wider card with supporting text below as a natural lead-in to
             additional content. This content is a little bit longer.
-          <Card.Text>Last updated 3 mins ago</Card.Text>
+          {/* <Card.Text>Last updated 3 mins ago</Card.Text> */}
           </Card.Text>
         </Card.ImgOverlay>
       </Card>
     </>
   );
 }
+
+export default Contact;
