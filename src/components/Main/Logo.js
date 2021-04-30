@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Logo() {
+const Logo = () => {
+// export default function Logo() {
   const classes = useStyles()
 
   return (
@@ -27,3 +28,5 @@ export default function Logo() {
     </>
   );
 }
+
+export default Logo;

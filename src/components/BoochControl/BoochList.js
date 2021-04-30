@@ -2,7 +2,8 @@ import React from 'react';
 import Booch from './Booch';
 import PropTypes from 'prop-types';
 
-export default function BoochList(props) {
+const BoochList = (props) => {
+// export default function BoochList(props) {
   return (
     <>
       <hr/>
@@ -28,3 +29,5 @@ BoochList.propTypes = {
   boochList: PropTypes.array,
   onBoochSelection: PropTypes.func
 };
+
+export default BoochList;

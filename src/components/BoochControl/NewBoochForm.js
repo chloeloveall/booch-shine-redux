@@ -3,7 +3,8 @@ import ReusableForm from './ReusableForm';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
-export default function NewBoochForm(props) {
+const NewBoochForm = (props) => {
+// export default function NewBoochForm(props) {
   function handleNewBoochFormSubmission(event) {
     event.preventDefault();
     props.onNewBoochCreation({
@@ -30,3 +31,5 @@ export default function NewBoochForm(props) {
 NewBoochForm.propTypes = {
   onNewBoochCreation: PropTypes.func
 };
+
+export default NewBoochForm;

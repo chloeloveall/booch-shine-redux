@@ -2,11 +2,13 @@ import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 
-export default function EditBoochForm(props) {
+const EditBoochForm = (props) => {
+// export default function EditBoochForm(props) {
 
   const { booch } = props;
 
-  function handleEditBoochFormSubmission(event) {
+  const handleEditBoochFormSubmission = (event) => {
+  // function handleEditBoochFormSubmission(event) {
     event.preventDefault();
     props.onEditBooch({
       name: event.target.name.value, 
@@ -32,3 +34,5 @@ EditBoochForm.propTypes = {
   booch: PropTypes.object,
   onEditBooch: PropTypes.func
 };
+
+export default EditBoochForm;

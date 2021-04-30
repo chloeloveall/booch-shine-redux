@@ -8,7 +8,9 @@ import Grid from '@material-ui/core/Grid';
 const formStyles = {
   padding: '4%',
 }
-export default function ReusableForm(props) {
+
+const ReusableForm = (props) => {
+// export default function ReusableForm(props) {
   return (
     <>
       <Grid 
@@ -92,3 +94,5 @@ ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string
 };
+
+export default ReusableForm;
