@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function BoochDetail(props) {
+const BoochDetail = (props) => {
+// export default function BoochDetail(props) {
   const { booch, onClickingDelete } = props;
   return (
     <>
@@ -27,3 +28,5 @@ BoochDetail.propTypes = {
   onClickingBuy: PropTypes.func,
   onClickingEdit: PropTypes.func
 };
+
+export default BoochDetail;
