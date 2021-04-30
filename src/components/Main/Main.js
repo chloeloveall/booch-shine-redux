@@ -14,7 +14,8 @@ import ImageCarousel from './ImageCarousel';
 //   height: '500px',
 // }
 
-export default function Main() {
+const Main = () => {
+// export default function Main() {
   return (
     <>
       <div style={{backgroundColor: '#000000', backgroundImage: `url(${DarkBackground})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}>
@@ -24,3 +25,5 @@ export default function Main() {
     </>
   );
 }
+
+export default Main;
