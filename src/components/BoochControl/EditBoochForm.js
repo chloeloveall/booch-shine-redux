@@ -2,7 +2,7 @@ import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 
-export default function EditBoochForm (props) {
+export default function EditBoochForm(props) {
 
   const { booch } = props;
 
@@ -14,7 +14,7 @@ export default function EditBoochForm (props) {
       price: event.target.price.value,
       alcoholContent: event.target.alcoholContent.value,
       flavorDescription: event.target.flavorDescription.value,
-      // remainingPints: event.target.remainingPints.value,  
+      // remainingPints: parseInt(event.target.remainingPints.value),  
       id: booch.id
     });
   }
