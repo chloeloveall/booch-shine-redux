@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import { connect } from 'react-redux';
 // import Booch from './Booch';
 import PropTypes from "prop-types";
+import * as a from '../../actions';
 
 // const boochInfoButtonStyle = {
   // marginTop: '-50px',
@@ -56,9 +57,10 @@ class BoochControl extends React.Component {
       });
     } else {
       const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
+      const action = a.toggleForm();
+      // const action = {
+      //   type: 'TOGGLE_FORM'
+      // }
       dispatch(action);
       // this.setState(prevState => ({
       //   formVisibleOnPage: !prevState.formVisibleOnPage
@@ -76,24 +78,10 @@ class BoochControl extends React.Component {
 
   handleAddingNewBoochToList = (newBooch) => {
     const { dispatch } = this.props;
-    const { id, name, brand, price, alcoholContent, flavorDescription, remainingPints } = newBooch;
-    const action = {
-      type: 'ADD_BOOCH',
-      id: id,
-      name: name,
-      brand: brand,
-      price: price,
-      alcoholContent: alcoholContent,
-      flavorDescription: flavorDescription,
-      remainingPints: remainingPints,
-      // remainingPintsMessage: PropTypes.string,
-    }
+    const action = a.addBooch(newBooch);
     dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
-    // this.setState({formVisibleOnPage: false});
   }
 
   // handleChangingSelectedBooch = (id) => {
@@ -118,10 +106,7 @@ class BoochControl extends React.Component {
 
   handleDeletingBooch = (id) => {
     const { dispatch } = this.props;
-    const action = {
-      type: 'DELETE_BOOCH',
-      id: id
-    }
+    const action = a.deleteBooch(id);
     dispatch(action);
     this.setState({selectedBooch: null});
   }
@@ -146,18 +131,7 @@ class BoochControl extends React.Component {
 
   handleEditingBoochInList = (boochToEdit) => {
     const { dispatch } = this.props;
-    const { id, name, brand, price, alcoholContent, flavorDescription, remainingPints } = boochToEdit;
-    const action = {
-      type: 'ADD_BOOCH',
-      id: id,
-      name: name,
-      brand: brand,
-      price: price,
-      alcoholContent: alcoholContent,
-      flavorDescription: flavorDescription,
-      remainingPints: remainingPints,
-      // remainingPintsMessage: PropTypes.string,
-    }
+    const action = a.addBooch(boochToEdit);
     dispatch(action);
     this.setState({
       editing: false,
