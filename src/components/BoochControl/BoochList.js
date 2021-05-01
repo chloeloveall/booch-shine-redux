@@ -6,7 +6,6 @@ const BoochList = (props) => {
 // export default function BoochList(props) {
   return (
     <>
-      <hr/>
       {props.boochList.map((booch) => 
         <Booch 
           whenBoochClicked={props.onBoochSelection}
