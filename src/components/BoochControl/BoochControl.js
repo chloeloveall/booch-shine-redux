@@ -6,13 +6,31 @@ import EditBoochForm from './EditBoochForm';
 import BoochInfo from './BoochInfo';
 import Grid from '@material-ui/core/Grid';
 
-const boochInfoStyle = {
-  color: 'blue',
-  width: '100%',
+const boochInfoButtonStyle = {
+  // marginTop: '-50px',
+  // marginBottom: '3%',
+  // color: 'blue',
+  // width: '100%',
+  // marginLeft: 0,
 }
 
-const boochInfoFormStyles = {
-  padding: '4%',
+const boochInfoStyles = {
+  // padding: '3%',
+  backgroundColor: '#234A50',
+}
+
+const newBoochFormStyles = {
+  // padding: '3%',
+  backgroundColor: '#234A50',
+}
+
+const boochListStyles = {
+  // padding: '3%',
+  backgroundColor: '#234A50',
+}
+
+const boochListButtonStyle = {
+  maxHeight: '50px',
 }
 
 export default class BoochControl extends React.Component {
@@ -117,7 +135,7 @@ export default class BoochControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     let buttonStyle = null;
-    let formStyles = null;
+    let useStyles = null;
     if (this.state.editing) {      
       currentlyVisibleState = <EditBoochForm booch={this.state.selectedBooch} onEditBooch={this.handleEditingBoochInList} />
       buttonText = "Back";
@@ -128,30 +146,32 @@ export default class BoochControl extends React.Component {
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewBoochForm onNewBoochCreation={this.handleAddingNewBoochToList} />
       buttonText = 'Back';
-    // } else {
-    //   currentlyVisibleState = <BoochList boochList={this.state.mainBoochList} onBoochSelection={this.handleChangingSelectedBooch} />
-    //   buttonText = "Add Booch";
-    // }
+      // buttonStyle = boochInfoButtonStyle;
+      useStyles = newBoochFormStyles;
     } else if (this.state.mainBoochList.length >= 1) {
       currentlyVisibleState = <BoochList boochList={this.state.mainBoochList} onBoochSelection={this.handleChangingSelectedBooch} />
       buttonText = "Add a New Booch";
+      buttonStyle = boochListButtonStyle;
+      useStyles = boochListStyles;
     } else {
       currentlyVisibleState = <BoochInfo onBoochSelection={this.handleChangingSelectedBooch} />
       buttonText = "Add a New Booch";
-      buttonStyle = boochInfoStyle;
-      formStyles = boochInfoFormStyles;
+      // buttonStyle = boochInfoButtonStyle;
+      useStyles = boochInfoStyles;
     }
     return (
       <>
         <Grid 
           container
           direction="row"
-          justify="center"
-          alignItems="stretch"
-          style={formStyles}
-        >
+          // justify="center"
+          // alignItems="stretch"
+          style={useStyles}
+        > 
           {currentlyVisibleState}
-          <button style={buttonStyle} onClick={this.handleClick}>{buttonText}</button>
+          {/* <Grid direction='row'> */}
+            <button style={buttonStyle} onClick={this.handleClick}>{buttonText}</button>
+          {/* </Grid> */}
         </Grid>
       </>
     );
