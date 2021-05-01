@@ -6,13 +6,13 @@ import EditBoochForm from './EditBoochForm';
 import BoochInfo from './BoochInfo';
 import Grid from '@material-ui/core/Grid';
 
-const boochInfoButtonStyle = {
+// const boochInfoButtonStyle = {
   // marginTop: '-50px',
   // marginBottom: '3%',
   // color: 'blue',
   // width: '100%',
   // marginLeft: 0,
-}
+// }
 
 const boochInfoStyles = {
   // padding: '3%',
