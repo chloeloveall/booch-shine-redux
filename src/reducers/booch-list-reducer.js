@@ -1,6 +1,6 @@
 import * as c from './../actions/ActionTypes';
 
-export default (state = {}, action) => {
+const BoochListReducer = (state = {}, action) => {
   const { name, brand, price, alcoholContent, flavorDescription, remainingPints, id } = action;
   switch (action.type) {
   case c.ADD_BOOCH:
@@ -24,3 +24,5 @@ export default (state = {}, action) => {
     return state;
   }
 };
+
+export default BoochListReducer;
