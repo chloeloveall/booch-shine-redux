@@ -1,7 +1,8 @@
-import rootReducer from '../../reducers/index'
-import { createStore } from 'redux'
-import formVisibleReducer from '../../reducers/form-visible-reducer'
-import boochListReducer from '../../reducers/booch-list-reducer'
+import rootReducer from '../../reducers/index';
+import { createStore } from 'redux';
+import formVisibleReducer from '../../reducers/form-visible-reducer';
+import boochListReducer from '../../reducers/booch-list-reducer';
+import * as c from '../../actions/ActionTypes';
 
 let store = createStore(rootReducer)
 
@@ -27,7 +28,7 @@ describe('rootReducer', () => {
 
   test('Check that ADD_BOOCH action works for boochListReducer and root reducer', () => {
     const action = {
-      type: 'ADD_BOOCH',
+      type: c.ADD_BOOCH,
       name: 'Midnight Painkiller',
       brand: 'Hard Kombucha',
       price: '$7.99',
@@ -45,7 +46,7 @@ describe('rootReducer', () => {
 
   test('Check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
     const action = {
-      type: 'TOGGLE_FORM',
+      type: c.TOGGLE_FORM,
     }
     store.dispatch(action)
     expect(store.getState().formVisibleOnPage).toEqual(
