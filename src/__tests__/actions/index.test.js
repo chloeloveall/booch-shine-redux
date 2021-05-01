@@ -1,16 +1,17 @@
 import * as actions from './../../actions';
+import * as c from '../../actions/ActionTypes';
 
 describe('booch shine actions', () => {
   it('deleteBooch should create DELETE_BOOCH action', () => {
     expect(actions.deleteBooch(1)).toEqual({
-      type: 'DELETE_BOOCH',
+      type: c.DELETE_BOOCH,
       id: 1
     });
   });
 
   it('toggleForm should create TOGGLE_FORM action', () => {
     expect(actions.toggleForm()).toEqual({
-      type: 'TOGGLE_FORM'
+      type: c.TOGGLE_FORM
     });
   });
 
@@ -25,7 +26,7 @@ describe('booch shine actions', () => {
       // remainingPintsMessage: PropTypes.string,
       id: 1
     })).toEqual({
-      type: 'ADD_BOOCH',
+      type: c.ADD_BOOCH,
       name: 'Midnight Painkiller',
       brand: 'Hard Kombucha',
       price: '$7.99',

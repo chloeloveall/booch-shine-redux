@@ -1,4 +1,5 @@
 import boochListReducer from '../../reducers/booch-list-reducer';
+import * as c from '../../actions/ActionTypes';
 
 describe('boochListReducer', () => {
 
@@ -40,7 +41,7 @@ describe('boochListReducer', () => {
   test('Should successfully add new booch data to mainBoochList', () => {
     const { name, brand, price, alcoholContent, flavorDescription, remainingPints, id } = boochData;
     action = {
-      type: 'ADD_BOOCH',
+      type: c.ADD_BOOCH,
       name: name,
       brand: brand,
       price: price,
@@ -67,7 +68,7 @@ describe('boochListReducer', () => {
 
   test('Should successfully delete a booch', () => {
     action = {
-      type: 'DELETE_BOOCH',
+      type: c.DELETE_BOOCH,
       id: 1
     };
     expect(boochListReducer(currentState, action)).toEqual({
