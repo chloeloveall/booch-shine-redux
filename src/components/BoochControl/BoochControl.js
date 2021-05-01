@@ -41,9 +41,7 @@ class BoochControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // formVisibleOnPage: false,
       selectedBooch: null,
-      // mainBoochList: [],
       editing: false
     };
   }
@@ -51,30 +49,15 @@ class BoochControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedBooch !== null) {
       this.setState({
-        // formVisibleOnPage: false,
         selectedBooch: null,
         editing: false
       });
     } else {
       const { dispatch } = this.props;
       const action = a.toggleForm();
-      // const action = {
-      //   type: 'TOGGLE_FORM'
-      // }
       dispatch(action);
-      // this.setState(prevState => ({
-      //   formVisibleOnPage: !prevState.formVisibleOnPage
-      // }));
     }
   }
-
-  // handleAddingNewBoochToList = (newBooch) => {
-  //   const newMainBoochList = this.state.mainBoochList.concat(newBooch);
-  //   this.setState({
-  //     mainBoochList: newMainBoochList,
-  //     formVisibleOnPage: false
-  //   });
-  // }
 
   handleAddingNewBoochToList = (newBooch) => {
     const { dispatch } = this.props;
@@ -84,25 +67,10 @@ class BoochControl extends React.Component {
     dispatch(action2);
   }
 
-  // handleChangingSelectedBooch = (id) => {
-  //   const selectedBooch = this.state.mainBoochList.filter(booch => booch.id === id)[0];
-  //   this.setState({
-  //     selectedBooch: selectedBooch
-  //   });
-  // }
-
   handleChangingSelectedBooch = (id) => {
-  const selectedBooch = this.props.mainBoochList[id];
-  this.setState({selectedBooch: selectedBooch});
-}
-
-  // handleDeletingBooch = (id) => {
-  //   const newMainBoochList = this.state.mainBoochList.filter(booch => booch.id !== id);
-  //   this.setState({
-  //     mainBoochList: newMainBoochList,
-  //     selectedBooch: null
-  //   });
-  // }
+    const selectedBooch = this.props.mainBoochList[id];
+    this.setState({selectedBooch: selectedBooch});
+  }
 
   handleDeletingBooch = (id) => {
     const { dispatch } = this.props;
@@ -118,17 +86,6 @@ class BoochControl extends React.Component {
     });
   }
 
-  // handleEditingBoochInList = (boochToEdit) => {
-  // const editedMainBoochList = this.state.mainBoochList
-  //   .filter(booch => booch.id !== this.state.selectedBooch.id)
-  //   .concat(boochToEdit);
-  // this.setState({
-  //     mainBoochList: editedMainBoochList,
-  //     editing: false,
-  //     selectedBooch: boochToEdit
-  //   });
-  // }
-
   handleEditingBoochInList = (boochToEdit) => {
     const { dispatch } = this.props;
     const action = a.addBooch(boochToEdit);
@@ -141,35 +98,58 @@ class BoochControl extends React.Component {
 
   handleBuyingBooch = () => {
     const selectedBooch = this.state.selectedBooch;
-    if(selectedBooch.remainingPints > 10) {
+    if(selectedBooch.remainingPints > 11) {
       const decrementedBooch = Object.assign({}, selectedBooch, {remainingPints: selectedBooch.remainingPints - 1});
-      const newMainBoochList = this.state.mainBoochList
-        .filter(booch => booch.id !== this.state.selectedBooch.id)
-        .concat(decrementedBooch);
+      this.handleEditingBoochInList(decrementedBooch);
       this.setState({
-        mainBoochList: newMainBoochList,
         selectedBooch: decrementedBooch
       });
-    } else if (selectedBooch.remainingPints > 0 && selectedBooch.remainingPints <= 10) {
+    } else if (selectedBooch.remainingPints >= 1 && selectedBooch.remainingPints <= 11) {
       const decrementedBooch = Object.assign({}, selectedBooch, {remainingPints: selectedBooch.remainingPints - 1}, {remainingPintsMessage: selectedBooch.remainingPintsMessage = 'Almost Empty!'});
-      const newMainBoochList = this.state.mainBoochList
-        .filter(booch => booch.id !== this.state.selectedBooch.id)
-        .concat(decrementedBooch);
+      this.handleEditingBoochInList(decrementedBooch);
       this.setState({
-        mainBoochList: newMainBoochList,
         selectedBooch: decrementedBooch
       });
-    } else {
+    } else if (selectedBooch.remainingPints <= 0) {
       const decrementedBooch = Object.assign({}, selectedBooch, {remainingPintsMessage: selectedBooch.remainingPintsMessage = 'Out of Stock!'});
-      const newMainBoochList = this.state.mainBoochList
-        .filter(booch => booch.id !== this.state.selectedBooch.id)
-        .concat(decrementedBooch);
+      this.handleEditingBoochInList(decrementedBooch);
       this.setState({
-        mainBoochList: newMainBoochList,
         selectedBooch: decrementedBooch
       });
     }
   }
+
+  // handleBuyingBooch = () => {
+  //   const selectedBooch = this.state.selectedBooch;
+  //   if(selectedBooch.remainingPints > 10) {
+  //     const decrementedBooch = Object.assign({}, selectedBooch, {remainingPints: selectedBooch.remainingPints - 1});
+  //     const newMainBoochList = this.state.mainBoochList
+  //       .filter(booch => booch.id !== this.state.selectedBooch.id)
+  //       .concat(decrementedBooch);
+  //     this.setState({
+  //       mainBoochList: newMainBoochList,
+  //       selectedBooch: decrementedBooch
+  //     });
+  //   } else if (selectedBooch.remainingPints > 0 && selectedBooch.remainingPints <= 10) {
+  //     const decrementedBooch = Object.assign({}, selectedBooch, {remainingPints: selectedBooch.remainingPints - 1}, {remainingPintsMessage: selectedBooch.remainingPintsMessage = 'Almost Empty!'});
+  //     const newMainBoochList = this.state.mainBoochList
+  //       .filter(booch => booch.id !== this.state.selectedBooch.id)
+  //       .concat(decrementedBooch);
+  //     this.setState({
+  //       mainBoochList: newMainBoochList,
+  //       selectedBooch: decrementedBooch
+  //     });
+  //   } else {
+  //     const decrementedBooch = Object.assign({}, selectedBooch, {remainingPintsMessage: selectedBooch.remainingPintsMessage = 'Out of Stock!'});
+  //     const newMainBoochList = this.state.mainBoochList
+  //       .filter(booch => booch.id !== this.state.selectedBooch.id)
+  //       .concat(decrementedBooch);
+  //     this.setState({
+  //       mainBoochList: newMainBoochList,
+  //       selectedBooch: decrementedBooch
+  //     });
+  //   }
+  // }
 
   render() {
     let currentlyVisibleState = null;
