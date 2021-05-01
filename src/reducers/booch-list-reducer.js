@@ -14,6 +14,10 @@ export default (state = {}, action) => {
         id: id,
       }
     });
+  case 'DELETE_BOOCH':
+    let newState = { ...state };
+    delete newState[id];
+    return newState;
   default:
     return state;
   }
