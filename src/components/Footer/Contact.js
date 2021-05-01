@@ -22,7 +22,8 @@ const Contact = () => {
   return (
     <>
       <Card className="bg-dark text-white">
-        <Card.Img style={{ minHeight: '300px'}} src='https://media.giphy.com/media/1esYrqh5zNmKbKcuY7/giphy.gif' alt="Card image" />
+        <Card.Img style={{ minHeight: '300px'}} src='https://media.giphy.com/media/HLsH9WYM3JcNN4FRli/giphy.gif' alt="Card image" />
+        {/* https://media.giphy.com/media/1esYrqh5zNmKbKcuY7/giphy.gif */}
         <Card.ImgOverlay>
           <Card.Text className={classes.overlay}>
           {/* <Card.Title>Contact</Card.Title> */}
