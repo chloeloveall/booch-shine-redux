@@ -40,7 +40,7 @@ class BoochControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
+      // formVisibleOnPage: false,
       selectedBooch: null,
       // mainBoochList: [],
       editing: false
@@ -50,14 +50,19 @@ class BoochControl extends React.Component {
   handleClick = () => {
     if (this.state.selectedBooch !== null) {
       this.setState({
-        formVisibleOnPage: false,
+        // formVisibleOnPage: false,
         selectedBooch: null,
         editing: false
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
+      const { dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_FORM'
+      }
+      dispatch(action);
+      // this.setState(prevState => ({
+      //   formVisibleOnPage: !prevState.formVisibleOnPage
+      // }));
     }
   }
 
@@ -84,7 +89,11 @@ class BoochControl extends React.Component {
       // remainingPintsMessage: PropTypes.string,
     }
     dispatch(action);
-    this.setState({formVisibleOnPage: false});
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action2);
+    // this.setState({formVisibleOnPage: false});
   }
 
   // handleChangingSelectedBooch = (id) => {
@@ -199,7 +208,7 @@ class BoochControl extends React.Component {
     } else if (this.state.selectedBooch !== null) {
       currentlyVisibleState = <BoochDetail booch={this.state.selectedBooch} onClickingDelete={this.handleDeletingBooch} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyingBooch} />
       buttonText = 'Back';
-    } else if (this.state.formVisibleOnPage) {
+    } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewBoochForm onNewBoochCreation={this.handleAddingNewBoochToList} />
       buttonText = 'Back';
       // buttonStyle = boochInfoButtonStyle;
@@ -236,12 +245,13 @@ class BoochControl extends React.Component {
 
 BoochControl.propTypes = {
   mainBoochList: PropTypes.object,
-  // formVisibleOnPage: PropTypes.bool
+  formVisibleOnPage: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    mainBoochList: state,
+    mainBoochList: state.mainBoochList,
+    formVisibleOnPage: state.formVisibleOnPage
   }
 }
 
