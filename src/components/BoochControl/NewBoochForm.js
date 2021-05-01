@@ -2,6 +2,23 @@ import React from 'react';
 import ReusableForm from './ReusableForm';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
+import BoochNewForm from '../../img/booch-newform.png';
+
+const newBoochImgStyle = {
+  maxWidth: '100%',
+  filter: 'drop-shadow(0 0 10px #000000)',
+  margin: 'auto',
+  padding: '3%',
+  // width: '500px',
+  // objectFit: 'contain'
+}
+
+const newBoochFormStyle = {
+  margin: 'auto',
+  padding: '3%',
+  color: '#000000',
+}
 
 const NewBoochForm = (props) => {
 // export default function NewBoochForm(props) {
@@ -20,10 +37,15 @@ const NewBoochForm = (props) => {
 
   return (
     <>
-      <ReusableForm 
-        formSubmissionHandler={handleNewBoochFormSubmission}
-        buttonText="Add Booch!"
-      />
+      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+        <img style={newBoochImgStyle} src={BoochNewForm} alt='Eighth slide' />
+      </Grid>
+      <Grid style={newBoochFormStyle} item xs={12} sm={12} md={6} lg={6} xl={6}>
+        <ReusableForm 
+          formSubmissionHandler={handleNewBoochFormSubmission}
+          buttonText="Add Booch!"
+        />
+      </Grid>
     </>
   );
 }
