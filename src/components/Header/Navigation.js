@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   customizeToolbar: {
     backgroundColor: '#234A50',
     color: '#ffffff',
-    borderBottom: '2px #ffffff solid',
+    borderBottom: '2px #f2be40 solid',
   },
   menuButton: {
     marginRight: theme.spacing(1),
@@ -80,7 +80,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SearchAppBar() {
+const SearchAppBar = () => {
+// export default function SearchAppBar() {
   const classes = useStyles();
 
   return (
@@ -118,3 +119,5 @@ export default function SearchAppBar() {
     </div>
   );
 }
+
+export default SearchAppBar;
