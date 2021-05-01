@@ -6,7 +6,8 @@ const BoochList = (props) => {
 // export default function BoochList(props) {
   return (
     <>
-      {props.boochList.map((booch) => 
+      {/* {props.boochList.map((booch) =>  */}
+      {Object.values(props.boochList).map((booch) =>
         <Booch 
           whenBoochClicked={props.onBoochSelection}
           name={booch.name}
@@ -25,7 +26,7 @@ const BoochList = (props) => {
 }
 
 BoochList.propTypes = {
-  boochList: PropTypes.array,
+  boochList: PropTypes.object,
   onBoochSelection: PropTypes.func
 };
 

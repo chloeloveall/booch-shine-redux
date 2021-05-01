@@ -38,7 +38,7 @@
 
 ## Description
 
-A React project that functions as a hard kombucha keg tracker for a fictional tap room. Inspired by and modeled after JuneShine Hard Kombucha. It has full CRUD functionality; users can view, add, update and delete hard kombucha kegs.
+A React with Redux project that functions as a hard kombucha keg tracker for a fictional tap room. Inspired by and modeled after JuneShine Hard Kombucha. It has full CRUD functionality; users can view, add, update and delete hard kombucha kegs.
 
 ## Preview
 
