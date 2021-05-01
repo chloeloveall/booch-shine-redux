@@ -23,7 +23,14 @@ const Logo = () => {
   return (
     <>
       <div className={classes.heroContent}>
-        <img className={classes.pageStyles} src={JuneshineLogo} alt='JuneShine logo' />
+        <img
+          // onMouseEnter={() => {
+          //   console.log("Event:MouseEnter");
+          // }}
+          // onMouseLeave={() => {
+          //   console.log("Event:MouseLeave");
+          // }}
+          className={classes.pageStyles} src={JuneshineLogo} alt='JuneShine logo' />
       </div>
     </>
   );
