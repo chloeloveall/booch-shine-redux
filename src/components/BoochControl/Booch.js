@@ -1,19 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Grid from '@material-ui/core/Grid';
+
+const boochStyle = {
+  // minHeight: '500px',
+  margin: 'auto',
+  padding: '10%',
+  color: '#000000',
+}
 
 const Booch = (props) => {
 // export default function Booch(props) {
   return (
     <>
       <div onClick = {() => props.whenBoochClicked(props.id)}>
-        <h3>{props.name}</h3>
-        <p>{props.brand}</p>
-        <p>{props.price}</p>
-        <p>{props.alcoholContent}</p>
-        <p>{props.flavorDescription}</p>
-        <p>{props.remainingPints}</p>
-        <p>{props.remainingPintsMessage}</p>
-        <hr/>
+        <Grid
+          direction='row' 
+          justify='space-evenly' 
+          style={boochStyle} item
+        >
+          <h3>{props.name}</h3>
+          <p>{props.brand}</p>
+          <p>{props.price}</p>
+          <p>{props.alcoholContent}</p>
+          <p>{props.flavorDescription}</p>
+          <p>{props.remainingPints}</p>
+          <p>{props.remainingPintsMessage}</p>
+          {/* <img style={newBoochImgStyle} src={BoochNewForm} alt='Eighth slide' /> */}
+        </Grid>
       </div>
     </>
   );
