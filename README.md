@@ -188,9 +188,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ## Design
 
 ![Color palette](src/img/JuneShinePalette.png)
+
 ### Component Diagram
 
 ![Component Tree Diagram](src/img/component-tree.png)
+
+### Mobile Design
+
+
 ## Known Bugs
 
 * None at this time
