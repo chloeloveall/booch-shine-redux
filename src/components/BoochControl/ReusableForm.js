@@ -5,15 +5,15 @@ import Col from  'react-bootstrap/Col';
 import Button from  'react-bootstrap/Button';
 import Grid from '@material-ui/core/Grid';
 
-const formStyles = {
-  padding: '4%',
-}
+// const formStyles = {
+//   padding: '4%',
+// }
 
 const ReusableForm = (props) => {
 // export default function ReusableForm(props) {
   return (
     <>
-      <Grid 
+      {/* <Grid 
         container
         direction="row"
         justify="center"
@@ -24,7 +24,7 @@ const ReusableForm = (props) => {
           am image
         </Grid>
 
-        <Grid item xs={12} sm={6} md={6} lg={6} xl={6}>
+        <Grid item xs={12} sm={6} md={6} lg={6} xl={6}> */}
           {/* form */}
           <Form onSubmit={props.formSubmissionHandler}>
             <Form.Row>
@@ -84,8 +84,8 @@ const ReusableForm = (props) => {
               {props.buttonText}
             </Button>
           </Form>
-        </Grid>
-      </Grid>
+        {/* </Grid>
+      </Grid> */}
     </>
   );
 }
