@@ -5,6 +5,9 @@ import BoochDetail from  './BoochDetail';
 import EditBoochForm from './EditBoochForm';
 import BoochInfo from './BoochInfo';
 import Grid from '@material-ui/core/Grid';
+import { connect } from 'react-redux';
+// import Booch from './Booch';
+import PropTypes from "prop-types";
 
 // const boochInfoButtonStyle = {
   // marginTop: '-50px',
@@ -33,13 +36,13 @@ const boochListButtonStyle = {
   maxHeight: '50px',
 }
 
-export default class BoochControl extends React.Component {
+class BoochControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false,
       selectedBooch: null,
-      mainBoochList: [],
+      // mainBoochList: [],
       editing: false
     };
   }
@@ -58,27 +61,60 @@ export default class BoochControl extends React.Component {
     }
   }
 
+  // handleAddingNewBoochToList = (newBooch) => {
+  //   const newMainBoochList = this.state.mainBoochList.concat(newBooch);
+  //   this.setState({
+  //     mainBoochList: newMainBoochList,
+  //     formVisibleOnPage: false
+  //   });
+  // }
+
   handleAddingNewBoochToList = (newBooch) => {
-    const newMainBoochList = this.state.mainBoochList.concat(newBooch);
-    this.setState({
-      mainBoochList: newMainBoochList,
-      formVisibleOnPage: false
-    });
+    const { dispatch } = this.props;
+    const { id, name, brand, price, alcoholContent, flavorDescription, remainingPints } = newBooch;
+    const action = {
+      type: 'ADD_BOOCH',
+      id: id,
+      name: name,
+      brand: brand,
+      price: price,
+      alcoholContent: alcoholContent,
+      flavorDescription: flavorDescription,
+      remainingPints: remainingPints,
+      // remainingPintsMessage: PropTypes.string,
+    }
+    dispatch(action);
+    this.setState({formVisibleOnPage: false});
   }
+
+  // handleChangingSelectedBooch = (id) => {
+  //   const selectedBooch = this.state.mainBoochList.filter(booch => booch.id === id)[0];
+  //   this.setState({
+  //     selectedBooch: selectedBooch
+  //   });
+  // }
 
   handleChangingSelectedBooch = (id) => {
-    const selectedBooch = this.state.mainBoochList.filter(booch => booch.id === id)[0];
-    this.setState({
-      selectedBooch: selectedBooch
-    });
-  }
+  const selectedBooch = this.props.mainBoochList[id];
+  this.setState({selectedBooch: selectedBooch});
+}
+
+  // handleDeletingBooch = (id) => {
+  //   const newMainBoochList = this.state.mainBoochList.filter(booch => booch.id !== id);
+  //   this.setState({
+  //     mainBoochList: newMainBoochList,
+  //     selectedBooch: null
+  //   });
+  // }
 
   handleDeletingBooch = (id) => {
-    const newMainBoochList = this.state.mainBoochList.filter(booch => booch.id !== id);
-    this.setState({
-      mainBoochList: newMainBoochList,
-      selectedBooch: null
-    });
+    const { dispatch } = this.props;
+    const action = {
+      type: 'DELETE_BOOCH',
+      id: id
+    }
+    dispatch(action);
+    this.setState({selectedBooch: null});
   }
 
   handleEditClick = () => {
@@ -88,14 +124,35 @@ export default class BoochControl extends React.Component {
     });
   }
 
+  // handleEditingBoochInList = (boochToEdit) => {
+  // const editedMainBoochList = this.state.mainBoochList
+  //   .filter(booch => booch.id !== this.state.selectedBooch.id)
+  //   .concat(boochToEdit);
+  // this.setState({
+  //     mainBoochList: editedMainBoochList,
+  //     editing: false,
+  //     selectedBooch: boochToEdit
+  //   });
+  // }
+
   handleEditingBoochInList = (boochToEdit) => {
-  const editedMainBoochList = this.state.mainBoochList
-    .filter(booch => booch.id !== this.state.selectedBooch.id)
-    .concat(boochToEdit);
-  this.setState({
-      mainBoochList: editedMainBoochList,
+    const { dispatch } = this.props;
+    const { id, name, brand, price, alcoholContent, flavorDescription, remainingPints } = boochToEdit;
+    const action = {
+      type: 'ADD_BOOCH',
+      id: id,
+      name: name,
+      brand: brand,
+      price: price,
+      alcoholContent: alcoholContent,
+      flavorDescription: flavorDescription,
+      remainingPints: remainingPints,
+      // remainingPintsMessage: PropTypes.string,
+    }
+    dispatch(action);
+    this.setState({
       editing: false,
-      selectedBooch: boochToEdit
+      selectedBooch: null
     });
   }
 
@@ -141,15 +198,14 @@ export default class BoochControl extends React.Component {
       buttonText = "Back";
     } else if (this.state.selectedBooch !== null) {
       currentlyVisibleState = <BoochDetail booch={this.state.selectedBooch} onClickingDelete={this.handleDeletingBooch} onClickingEdit={this.handleEditClick} onClickingBuy={this.handleBuyingBooch} />
-      //back or submit? not sure yet
       buttonText = 'Back';
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewBoochForm onNewBoochCreation={this.handleAddingNewBoochToList} />
       buttonText = 'Back';
       // buttonStyle = boochInfoButtonStyle;
       useStyles = newBoochFormStyles;
-    } else if (this.state.mainBoochList.length >= 1) {
-      currentlyVisibleState = <BoochList boochList={this.state.mainBoochList} onBoochSelection={this.handleChangingSelectedBooch} />
+    } else if ((Object.entries(this.props.mainBoochList).length > 0)) {
+      currentlyVisibleState = <BoochList boochList={this.props.mainBoochList} onBoochSelection={this.handleChangingSelectedBooch} />
       buttonText = "Add a New Booch";
       buttonStyle = boochListButtonStyle;
       useStyles = boochListStyles;
@@ -177,3 +233,18 @@ export default class BoochControl extends React.Component {
     );
   }
 }
+
+BoochControl.propTypes = {
+  mainBoochList: PropTypes.object,
+  // formVisibleOnPage: PropTypes.bool
+};
+
+const mapStateToProps = state => {
+  return {
+    mainBoochList: state,
+  }
+}
+
+BoochControl = connect(mapStateToProps)(BoochControl);
+
+export default BoochControl;
