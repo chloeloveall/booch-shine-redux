@@ -13,9 +13,11 @@ const Booch = (props) => {
     <>
       <div onClick = {() => props.whenBoochClicked(props.id)}>
         <Grid
-          direction='row' 
+          container
+          direction='column' 
           justify='space-evenly' 
-          style={boochStyle} item
+          style={boochStyle} 
+          item
         >
           <h3>{props.name}</h3>
           <p>{props.brand}</p>
