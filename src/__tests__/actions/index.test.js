@@ -38,9 +38,15 @@ describe('booch shine actions', () => {
     });
   });
 
-  it('nullifyBooch should create NULLIFY_BOOCH action', () => {
+  it('nullifyBooch should create MAKE_NULL action', () => {
     expect(actions.nullifyBooch()).toEqual({
       type: c.MAKE_NULL
+    });
+  });
+
+  it('selectBooch should create SELECT_BOOCH action', () => {
+    expect(actions.selectBooch()).toEqual({
+      type: c.SELECT_BOOCH
     });
   });
 

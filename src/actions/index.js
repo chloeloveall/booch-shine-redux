@@ -28,3 +28,8 @@ export const nullifyBooch = id => ({
   type: c.MAKE_NULL,
   id
 });
+
+export const selectBooch = id => ({
+  type: c.SELECT_BOOCH,
+  id
+});
