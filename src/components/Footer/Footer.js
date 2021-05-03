@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Footer = () => {
-// export default function Footer() {
 
   const classes = useStyles();
 

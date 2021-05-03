@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const BoochDetail = (props) => {
-// export default function BoochDetail(props) {
   const { booch, onClickingDelete } = props;
   return (
     <>

@@ -10,8 +10,6 @@ const newBoochImgStyle = {
   filter: 'drop-shadow(0 0 10px #000000)',
   margin: 'auto',
   padding: '3%',
-  // width: '500px',
-  // objectFit: 'contain'
 }
 
 const newBoochFormStyle = {
@@ -21,7 +19,6 @@ const newBoochFormStyle = {
 }
 
 const NewBoochForm = (props) => {
-// export default function NewBoochForm(props) {
   function handleNewBoochFormSubmission(event) {
     event.preventDefault();
     props.onNewBoochCreation({
