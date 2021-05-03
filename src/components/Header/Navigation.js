@@ -81,7 +81,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SearchAppBar = () => {
-// export default function SearchAppBar() {
   const classes = useStyles();
 
   return (

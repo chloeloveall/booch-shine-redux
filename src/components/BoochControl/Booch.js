@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 
 const boochStyle = {
-  // minHeight: '500px',
   margin: 'auto',
   padding: '10%',
   color: '#000000',
 }
 
 const Booch = (props) => {
-// export default function Booch(props) {
   return (
     <>
       <div onClick = {() => props.whenBoochClicked(props.id)}>
         <Grid
-          direction='row' 
+          container
+          direction='column' 
           justify='space-evenly' 
-          style={boochStyle} item
+          style={boochStyle} 
+          item
         >
           <h3>{props.name}</h3>
           <p>{props.brand}</p>
@@ -26,7 +26,6 @@ const Booch = (props) => {
           <p>{props.flavorDescription}</p>
           <p>{props.remainingPints}</p>
           <p>{props.remainingPintsMessage}</p>
-          {/* <img style={newBoochImgStyle} src={BoochNewForm} alt='Eighth slide' /> */}
         </Grid>
       </div>
     </>

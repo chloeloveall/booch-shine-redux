@@ -37,4 +37,23 @@ describe('booch shine actions', () => {
       id: 1,
     });
   });
+
+  it('nullifyBooch should create MAKE_NULL action', () => {
+    expect(actions.nullifyBooch()).toEqual({
+      type: c.MAKE_NULL
+    });
+  });
+
+  it('selectBooch should create SELECT_BOOCH action', () => {
+    expect(actions.selectBooch()).toEqual({
+      type: c.SELECT_BOOCH
+    });
+  });
+
+  it('setEdit should create SET_EDIT action', () => {
+    expect(actions.setEdit()).toEqual({
+      type: c.SET_EDIT
+    });
+  });
+
 });

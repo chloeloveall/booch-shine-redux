@@ -23,3 +23,17 @@ export const addBooch = (booch) => {
     id: id,
   }
 }
+
+export const nullifyBooch = id => ({
+  type: c.MAKE_NULL,
+  id
+});
+
+export const selectBooch = id => ({
+  type: c.SELECT_BOOCH,
+  id
+});
+
+export const setEdit = () => ({
+  type: c.SET_EDIT,
+});

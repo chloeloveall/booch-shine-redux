@@ -7,7 +7,7 @@
 #### By _**Chloe Loveall**_
 <br>
 
-![license](https://img.shields.io/github/license/chloeloveall/booch-shine?color=blue&style=flat-square) &nbsp; ![top project language](https://img.shields.io/github/languages/top/chloeloveall/booch-shine?style=flat-square) &nbsp; ![last github commit](https://img.shields.io/github/last-commit/chloeloveall/booch-shine?style=flat-square) &nbsp; ![github pull requests](https://img.shields.io/github/issues-pr/chloeloveall/booch-shine?style=flat-square) &nbsp; ![open issues](https://img.shields.io/github/issues-raw/chloeloveall/booch-shine?style=flat-square) &nbsp; ![github contributors](https://img.shields.io/github/contributors/chloeloveall/booch-shine?color=brightgreen&style=flat-square) &nbsp; ![vercel deployment status](https://img.shields.io/github/deployments/chloeloveall/booch-shine/production?label=vercel&logo=vercel)
+![license](https://img.shields.io/github/license/chloeloveall/booch-shine-redux?color=blue&style=flat-square) &nbsp; ![top project language](https://img.shields.io/github/languages/top/chloeloveall/booch-shine-redux?style=flat-square) &nbsp; ![last github commit](https://img.shields.io/github/last-commit/chloeloveall/booch-shine-redux?style=flat-square) &nbsp; ![github pull requests](https://img.shields.io/github/issues-pr/chloeloveall/booch-shine-redux?style=flat-square) &nbsp; ![open issues](https://img.shields.io/github/issues-raw/chloeloveall/booch-shine-redux?style=flat-square) &nbsp; ![github contributors](https://img.shields.io/github/contributors/chloeloveall/booch-shine-redux?color=brightgreen&style=flat-square) &nbsp; ![vercel deployment status](https://img.shields.io/github/deployments/chloeloveall/booch-shine-redux/production?label=vercel&logo=vercel)
 
 ## Table of Contents
 
@@ -42,7 +42,7 @@ A React with Redux project that functions as a hard kombucha keg tracker for a f
 
 ## Preview
 
-Live preview: [Booch Shine](https://booch-shine.vercel.app/)
+Live preview: [Booch Shine Redux](https://booch-shine-redux.vercel.app/)
 
 Deployed on [Vercel](https://vercel.com)
 
@@ -87,12 +87,12 @@ Deployed on [Vercel](https://vercel.com)
 
 #### Clone
 
-* Clone the repository with the following git terminal command: ```$ git clone https://github.com/chloeloveall/booch-shine.git```
+* Clone the repository with the following git terminal command: ```$ git clone https://github.com/chloeloveall/booch-shine-redux.git```
 * Open the project's root directory (```booch-shine```) in your terminal
 
 #### Download
 
-* Open the repository on GitHub: [chloeloveall/booch-shine](https://github.com/chloeloveall/booch-shine)
+* Open the repository on GitHub: [chloeloveall/booch-shine-redux](https://github.com/chloeloveall/booch-shine-redux)
 * Click ```Code``` button and select ```Download ZIP```
 * Open and extract the files
 * Open [VSCode], or your code editor of choice
@@ -202,7 +202,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Issues
 
-* Report issues [here](https://github.com/chloeloveall/booch-shine/issues) and select the ```New issue``` button
+* Report issues [here](https://github.com/chloeloveall/booch-shine-redux/issues) and select the ```New issue``` button
 for support
 
 ## Feature Development Roadmap
@@ -238,6 +238,6 @@ Contributions are what make the open source community such an amazing place to b
 
 _Chloe Loveall <chloeloveall@protonmail.com>_
 
-![github followers](https://img.shields.io/github/followers/chloeloveall?style=social) &nbsp; ![github forks](https://img.shields.io/github/forks/chloeloveall/booch-shine?label=Forks&style=social) &nbsp; ![github stars](https://img.shields.io/github/stars/chloeloveall/booch-shine?style=social)
+![github followers](https://img.shields.io/github/followers/chloeloveall?style=social) &nbsp; ![github forks](https://img.shields.io/github/forks/chloeloveall/booch-shine-redux?label=Forks&style=social) &nbsp; ![github stars](https://img.shields.io/github/stars/chloeloveall/booch-shine-redux?style=social)
 
 [Back to Top](#table-of-contents)

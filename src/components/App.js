@@ -20,7 +20,6 @@ const stickyHeader = {
 }
 
 const App = () => {
-// export default function App() {
   return (
     <>
       <Container maxWidth='xl' style={pageStyles}>
