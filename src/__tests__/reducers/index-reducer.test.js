@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import boochListReducer from '../../reducers/booch-list-reducer';
 import selectedBoochReducer from '../../reducers/selected-booch-reducer';
+import editingBoochReducer from '../../reducers/editing-booch-reducer';
 import * as c from '../../actions/ActionTypes';
 
 let store = createStore(rootReducer)
@@ -12,7 +13,8 @@ describe('rootReducer', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       mainBoochList: {},
       formVisibleOnPage: false,
-      selectedBooch: null
+      selectedBooch: null,
+      editing: false
     });
   });
 
@@ -31,6 +33,12 @@ describe('rootReducer', () => {
   test('Check that initial state of selectedBoochReducer matches root reducer', () => {
     expect(store.getState().selectedBooch).toEqual(
       selectedBoochReducer(null, { type: null }),
+    );
+  });
+
+  test('Check that initial state of editingBoochReducer matches root reducer', () => {
+    expect(store.getState().editing).toEqual(
+      editingBoochReducer(false, { type: null }),
     );
   });
 
@@ -80,6 +88,16 @@ describe('rootReducer', () => {
     store.dispatch(action)
     expect(store.getState().selectedBooch).toEqual(
       selectedBoochReducer(1, action),
+    );
+  });
+
+  test('Check that SET_EDIT action works for selectedBoochReducer and root reducer', () => {
+    const action = {
+      type: c.SET_EDIT
+    }
+    store.dispatch(action)
+    expect(store.getState().editing).toEqual(
+      editingBoochReducer(undefined, action),
     );
   });
 
