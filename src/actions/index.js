@@ -23,3 +23,8 @@ export const addBooch = (booch) => {
     id: id,
   }
 }
+
+export const nullifyBooch = id => ({
+  type: c.MAKE_NULL,
+  id
+});

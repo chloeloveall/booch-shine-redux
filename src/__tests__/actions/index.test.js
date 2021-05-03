@@ -37,4 +37,11 @@ describe('booch shine actions', () => {
       id: 1,
     });
   });
+
+  it('nullifyBooch should create NULLIFY_BOOCH action', () => {
+    expect(actions.nullifyBooch()).toEqual({
+      type: c.MAKE_NULL
+    });
+  });
+
 });
