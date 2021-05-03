@@ -50,4 +50,10 @@ describe('booch shine actions', () => {
     });
   });
 
+  it('setEdit should create SET_EDIT action', () => {
+    expect(actions.setEdit()).toEqual({
+      type: c.SET_EDIT
+    });
+  });
+
 });

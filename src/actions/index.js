@@ -33,3 +33,7 @@ export const selectBooch = id => ({
   type: c.SELECT_BOOCH,
   id
 });
+
+export const setEdit = () => ({
+  type: c.SET_EDIT,
+});
