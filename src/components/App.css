@@ -21,14 +21,14 @@ body {
   display: inline-block;
   white-space: nowrap;
   padding-right: 100%;
-  animation: ticker 40s linear infinite;
+  animation: ticker 100s linear infinite;
 }
 
 .ticker-move-lower {
   display: inline-block;
   white-space: nowrap;
   padding-right: 100%;
-  animation: ticker 40s reverse linear infinite;
+  animation: ticker 100s reverse linear infinite;
 }
 
 .ticker-move:hover {
@@ -37,5 +37,4 @@ body {
 
 .ticker-item {
   display: inline-block;
-  padding: 0 40px;
 }
