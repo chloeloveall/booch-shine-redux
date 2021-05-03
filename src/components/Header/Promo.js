@@ -1,22 +1,7 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import { Icon } from 'semantic-ui-react';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1,
-//     backgroundColor: '#000000',
-//     color: '#ffffff',
-//     maxHeight: '1.5em',
-//   },
-  // title: {
-  //   margin: 'auto',
-  //   padding: '.25em',
-  //   fontWeight: 'bold',
-  //   fontSize: '8px',
-  // },
-// 
 const root = {
   flexGrow: 1,
   backgroundColor: '#000000',
@@ -26,13 +11,12 @@ const root = {
 
 const title = {
   margin: 'auto',
-  padding: '.25em',
+  padding: '0 40px',
   fontWeight: 'bold',
-  fontSize: '8px',
+  fontSize: '10px',
 }
 
-export default function Promo() {
-  // const classes = useStyles()
+const Promo = () => { 
 
   return (
     <>
@@ -74,3 +58,5 @@ export default function Promo() {
     </>
   );
 }
+
+export default Promo;
