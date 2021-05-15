@@ -8,7 +8,7 @@ const EditBoochForm = (props) => {
 
   const handleEditBoochFormSubmission = (event) => {
     event.preventDefault();
-    props.onEditBooch({
+    props.onEditBooch({...booch, ...({
       name: event.target.name.value, 
       brand: event.target.brand.value, 
       price: event.target.price.value,
@@ -16,6 +16,7 @@ const EditBoochForm = (props) => {
       flavorDescription: event.target.flavorDescription.value,
       // remainingPints: parseInt(event.target.remainingPints.value),  
       id: booch.id
+    })
     });
   }
 
